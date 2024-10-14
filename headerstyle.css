@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(90, 90, 90); /*Color del fondo del header*/
+    padding: 0px 20px;
+    position: relative;
+    height: 90px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    
+}
+
+.menu-izq {
+    flex: 1; /*Desplazamiento lateral hacia la derecha*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-der {
+    flex: 1; /*Desplazamiento lateral hacia la izquierda*/
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu-izq ul,  .menu-der ul { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; /*Separación entre los textos*/
+}
+
+.menu-izq ul { /*Lo que hace que se pegue al logo por la derecha*/
+    justify-content: flex-start;
+}
+
+.menu-der ul { /*Lo que hace que se pegue al logo por la izquierda*/
+    justify-content: flex-end;
+}
+
+.menu-izq ul li, .menu-der  ul li {
+    display: inline;
+}
+
+.menu-izq ul li a,  .menu-der ul li a {
+    color: white;  /*Color del texto*/
+    text-decoration: none; /*Quitar el underline del hipervinculo*/
+    font-size: 25px;  /*Tamaño de letra principal*/
+    padding: 8px 12px;  /*Espacio entre el texto y el borde*/
+    transition: background-color 0.3s;
+}
+
+nav  ul li a:hover { /*Cuando pasas el cursor por encima de las letras*/
+    background-color: #444;  /*Color del fondo del resalteado*/
+    border-radius: 4px; /*Radio del resalteado*/
+    color: #f4a300; /*Color con el que se destacará  el texto*/
+}
+
+nav ul li a.activo {
+    color: red /*Se cambia el color cuando se está en la página*/
+}
+
+.logo-img { /*Para editar la imagen del logo*/
+    height: 100px;  /*Altura de la imagen*/
+    width: auto; /*Anchura de la imagen*/
+    margin-left: 20px; /*Espacio entre el texto y el logo*/
+    margin-right: 20px;  /*Espacio entre el logo y el texto*/
+
+    }
+
+    @media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+    }
+
+    .menu-izq ul, .menu-der ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    
+}
